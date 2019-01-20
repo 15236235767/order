@@ -8,8 +8,7 @@
 # export TOMCAT_APP_PATH=tomcat在部署机器上的路径
 
 ### base 函数
-killTomcat()
-{
+killTomcat(){
     pid=`ps -ef|grep tomcat|grep java|awk '{print $2}'`
     echo "tomcat Id list :$pid"
     if [ "$pid" = "" ]
@@ -29,12 +28,14 @@ killTomcat
 rm -rf /home/admin/apache-tomcat-8.5.31/webapps/order
 rm -f /home/admin/apache-tomcat-8.5.31/webapps/order.war
 
+cp /home/admin/app/order.war /home/admin/apache-tomcat-8.5.31/webapps/
+
 # cd /home/admin/apache-tomcat-8.5.31/webapps/
 # mv order.war ROOT.war
 
 # 启动Tomcat
-cd /home/admin/apache-tomcat-8.5.31/
-sh bin/startup.sh
+cd /home/admin/apache-tomcat-8.5.31/bin/
+sh startup.sh
 
 
 
