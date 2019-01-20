@@ -26,14 +26,14 @@ killTomcat()
 killTomcat
 
 # 删除原有工程
-rm -rf $TOMCAT_APP_PATH/webapps/ROOT
-rm -f $TOMCAT_APP_PATH/webapps/order.war
+rm -rf /home/admin/apache-tomcat-8.5.31/webapps/order
+rm -f /home/admin/apache-tomcat-8.5.31/webapps/order.war
 
-# cd $TOMCAT_APP_PATH/webapps/
+# cd /home/admin/apache-tomcat-8.5.31/webapps/
 # mv order.war ROOT.war
 
 # 启动Tomcat
-cd $TOMCAT_APP_PATH/
+cd /home/admin/apache-tomcat-8.5.31/
 sh bin/startup.sh
 
 
